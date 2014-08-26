@@ -1,0 +1,3 @@
+In fedora
+compile by this command
+gcc filename -lGL -lGLU -lglut
