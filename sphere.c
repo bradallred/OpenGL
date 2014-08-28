@@ -18,7 +18,7 @@ static void display(void)
 {
  
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glColor3d(1,0,0);
+    glColor3d(0,1,1);
  
     glPushMatrix();
         glTranslated(0.0,1.2,-6);
@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 {
     glutInit(&argc, argv);
     glutInitWindowSize(640,480);
-    glutInitWindowPosition(10,10);
+    glutInitWindowPosition(200,100);
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
  
     glutCreateWindow("A Solid Sphere");
