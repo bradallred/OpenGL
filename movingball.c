@@ -1,6 +1,6 @@
 #include <GL/glut.h>
 #include <stdlib.h>
-float x=0.0,y=0.0,z=-5.0;
+float x=0.0,y=0.0,z=-5.0,var=0.02;
 int flag=0;
 static void resize(int width, int height)
 {
@@ -22,27 +22,17 @@ static void display(void)
     glColor3d(0,1,1);
  
     glPushMatrix();
-    if(flag==0 && (x<=0 || x<2.8))
+    
+    x+=var;
+    if(x>=2.8)
     {
-    	x+=0.02;
-    	y+=0.04;
-    	z+=0.01;
-    	if(x>=0.9)
-    	{
-    		flag=1;
-    	}
+    	var=-var;
     }
-    if(flag==1)
+    if(x <= -2.8)
     {
-    	x-=0.02;
-    	y-=0.04;
-    	z-=0.01;
-    	if(x<=-0.9)
-    	{
-    		flag=0;
-    	}
+    	var=-var;
     }
-        glTranslated(x,y,-6);
+        glTranslated(x,0.0,-6);
         glutSolidSphere(1,50,50);
     glPopMatrix();
 /* 
